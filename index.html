@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkyCast Weather</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🌤️ SkyCast</h1>
+    <div class="top-actions">
+      <button id="unit-toggle" type="button" class="secondary" aria-label="Switch temperature unit">°C</button>
+      <button id="theme-toggle" type="button" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <form id="search-form" class="card search">
+      <input id="city" type="text" placeholder="Search for a city..." autocomplete="off" required />
+      <button type="submit">Search</button>
+      <button type="button" id="locate-btn" class="secondary" title="Use my location" aria-label="Use my location">📍</button>
+    </form>
+
+    <div id="recent" class="recent"></div>
+    <p id="status" class="muted" role="status">Search for a city to see the weather.</p>
+
+    <section id="current" class="card current hidden">
+      <div class="current-main">
+        <div>
+          <h2 id="place-name"></h2>
+          <p id="place-date" class="muted"></p>
+          <p id="description" class="description"></p>
+        </div>
+        <div class="temp-block">
+          <span id="icon" class="icon" aria-hidden="true"></span>
+          <span id="temp" class="temp"></span>
+        </div>
+      </div>
+      <div class="details">
+        <div><span class="muted">Feels like</span><strong id="feels"></strong></div>
+        <div><span class="muted">Humidity</span><strong id="humidity"></strong></div>
+        <div><span class="muted">Wind</span><strong id="wind"></strong></div>
+      </div>
+    </section>
+
+    <section id="forecast-section" class="hidden">
+      <h2 class="section-title">5-day forecast</h2>
+      <div id="forecast" class="forecast"></div>
+    </section>
+  </main>
+
+  <footer class="footer muted">Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
